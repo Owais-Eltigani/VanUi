@@ -12,9 +12,6 @@ export const loader = async ({ params }: { params: params }) => {
 };
 
 export const HostVanDetailsLayout = () => {
-  // const { id } = useParams();
-  // const [van, setVan] = useState<VanUi>();
-
   const vans: VanUi[] = useLoaderData();
   const van: VanUi = vans[0];
 
@@ -23,22 +20,6 @@ export const HostVanDetailsLayout = () => {
     color: '#161616',
     textDecoration: 'underline',
   };
-
-  // const fetchVan = async (id: string) => {
-  //   const res = await fetch(`/api/host/vans/${id}`);
-  //   const { vans } = await res.json();
-  //   setVan(vans[0]);
-  // };
-
-  // useEffect(() => {
-  //   try {
-  //     fetchVan(id);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-
-  //   // return () => {};
-  // }, [id]);
 
   if (!van) return <div>Loading...</div>;
 

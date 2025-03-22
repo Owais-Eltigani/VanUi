@@ -1,38 +1,19 @@
 import { Link, useLocation, useLoaderData } from 'react-router-dom';
 import { VanUi } from '../utils/types';
-import { fetchVans /* _fireBase_fetch_van */ } from '../utils/APIs';
+import { fetchVans } from '../utils/APIs';
 
 interface params {
   id: string;
 }
 
 export const loader = ({ params }: { params: params }) => {
+  // get one van by id
   return fetchVans(params.id);
-  // return _fireBase_fetch_van(params.id);
 };
 
 export const Van = () => {
-  // const { id } = useParams();
-  // const [van, setVan] = useState<VanUi>();
   const van: VanUi = useLoaderData();
   const location = useLocation();
-
-  // const fetchVan = async (id: string) => {
-  //   const res = await fetch(`/api/vans/${id}`);
-  //   //
-  //   const { vans } = await res.json();
-  //   setVan(vans);
-  // };
-
-  // useEffect(() => {
-  //   try {
-  //     fetchVan(id);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-
-  //   // return () => {};
-  // }, [id]);
 
   return (
     <div className="van-detail-container">

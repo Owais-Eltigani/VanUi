@@ -5,9 +5,8 @@ import { fetchHostVans } from '../utils/APIs';
 import { VanUi } from '../utils/types';
 
 export async function loader() {
-  // await auth(request);
+  // defer aysnchronously fetch the host vans.
   return defer({ vans: fetchHostVans() });
-  // return defer({ vans: await _fireBase_fetch_host_vans() });
 }
 
 export function Dashboard() {
